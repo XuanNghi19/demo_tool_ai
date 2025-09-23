@@ -1,10 +1,7 @@
 package quykhu.aitool.demo.ai.tool.entity;
 
-import com.pgvector.Vector;
 import jakarta.persistence.*;
 import lombok.*;
-import org.hibernate.annotations.JdbcTypeCode;
-import org.hibernate.type.SqlTypes;
 
 @Entity
 @Table(name = "products")
@@ -31,5 +28,5 @@ public class Products {
             name = "image_embedding",
             columnDefinition = "vector(512)"
     )
-    private PGvector imageEmbedding;
+    private float[] imageEmbedding;
 }
