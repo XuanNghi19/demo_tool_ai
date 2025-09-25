@@ -3,13 +3,15 @@ package quykhu.aitool.demo.ai.tool.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import com.pgvector.PGvector;
+
 @Entity
 @Table(name = "products")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Products {
+public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,9 +26,6 @@ public class Products {
     @Column(name = "image_url", columnDefinition = "TEXT")
     private String imageUrl;
 
-    @Column(
-            name = "image_embedding",
-            columnDefinition = "vector(512)"
-    )
-    private float[] imageEmbedding;
+    @Column(name = "image_embedding", columnDefinition = "vector(512)")
+    private String imageEmbedding;
 }
